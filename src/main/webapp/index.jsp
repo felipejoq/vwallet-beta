@@ -55,7 +55,7 @@
         <div class="col-md-4 mb-4">
             <div class="card h-100 text-center">
                 <div class="card-body d-flex flex-column align-items-center">
-                    <img style="max-width: 100px" src="<%=request.getContextPath()%>/resources/img/depositar.webp" alt="Depositar fondos">
+                    <img style="max-width: 100px" src="<%=request.getContextPath()%>/resources/img/depositar.png" alt="Depositar fondos">
                     <h5 class="card-title">Añadir Fondos</h5>
                     <p class="card-text">Deposite dinero en su cuenta de forma rápida y sencilla.</p>
                     <a href="#" class="btn btn-custom w-100">Añadir Fondos</a>
@@ -75,7 +75,7 @@
         <div class="col-md-4 mb-4">
             <div class="card h-100 text-center">
                 <div class="card-body d-flex flex-column align-items-center">
-                    <img style="max-width: 100px" src="<%=request.getContextPath()%>/resources/img/transferir.webp" alt="Transferir fondos">
+                    <img style="max-width: 100px" src="<%=request.getContextPath()%>/resources/img/transferir.png" alt="Transferir fondos">
                     <h5 class="card-title">Transferir Fondos <span class="badge badge-info">(Pronto)</span></h5>
                     <p class="card-text">Transfiera dinero a otras cuentas de manera fácil y segura.</p>
                     <a href="#" class="btn btn-custom w-100">Transferir Fondos</a>
