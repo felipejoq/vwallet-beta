@@ -16,4 +16,14 @@ public class BankAccountServiceImpl implements IBankAccountService {
     public BankAccount getBankAccountByUserId(int userId) {
         return bankAccountDao.getBankAccountByUserId(userId);
     }
+
+    @Override
+    public boolean addBalance(int bankAccountId, double amount) {
+        return bankAccountDao.addBalance(bankAccountId, amount);
+    }
+
+    @Override
+    public boolean deductBalance(int bankAccountId, double amount) {
+        return bankAccountDao.deductBalance(bankAccountId, amount);
+    }
 }

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class BankAccount {
 
-    private Long id;
+    private int id;
 
     private String accountNumber;
     private Float balance;
@@ -28,11 +28,11 @@ public class BankAccount {
         this.balance = balance;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

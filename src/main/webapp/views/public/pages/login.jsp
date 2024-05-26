@@ -21,7 +21,15 @@
 <div class="container">
     <!-- Align vertically and horizontally -->
     <div class="row justify-content-center align-content-center vh-100">
-        <div class="col-md-4">
+        <div class="col-12 col-md-12 col-lg-6 col-xl-4">
+            <!-- mostrar alerta si en la sesión hay error -->
+            <% if (request.getSession().getAttribute("error") != null) {%>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Error:</strong> <%=request.getSession().getAttribute("error")%>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <% request.getSession().removeAttribute("error"); %>
+            <% } %>
             <div class="card mt-5">
                 <div class="card-header text-center fw-bold fs-4">
                     <div class="">VWallet Beta</div>

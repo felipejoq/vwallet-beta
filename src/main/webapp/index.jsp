@@ -12,6 +12,9 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- index style css -->
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/index.style.css" />
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 </head>
 <body>
 <%
@@ -29,19 +32,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="<%=request.getContextPath()%>">Inicio</a>
+                    <a class="nav-link" href="<%=request.getContextPath()%>"><i class="bi bi-house-door-fill"></i> Inicio</a>
                 </li>
                 <li class="nav-item">
                     <% if (user != null) { %>
-                        <a class="nav-link" href="<%=request.getContextPath()%>/dashboard">Dashboard</a>
+                        <a class="nav-link" href="<%=request.getContextPath()%>/dashboard"><i class="bi bi-speedometer"></i> Dashboard</a>
                     <% } else { %>
-                        <a class="nav-link" href="<%=request.getContextPath()%>/login">Iniciar sesión</a>
+                        <a class="nav-link" href="<%=request.getContextPath()%>/login"><i class="bi bi-box-arrow-in-right"></i> Iniciar sesión</a>
                     <% } %>
                 </li>
                 <li class="nav-item">
                     <% if (user != null) { %>
                         <form action="<%=request.getContextPath()%>/logout" method="post">
-                            <button type="submit" class="btn btn-link nav-link">Cerrar sesión</button>
+                            <button type="submit" class="btn btn-link nav-link"><i class="bi bi-box-arrow-in-left"></i> Cerrar sesión</button>
                         </form>
                     <% } %>
                 </li>

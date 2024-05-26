@@ -79,13 +79,47 @@ public class BankAccountDaoImpl implements IBankAccountDao {
         }
     }
 
+    @Override
+    public boolean addBalance(int bankAccountId, double amount) {
+        String query = "UPDATE bank_accounts SET balance = balance + ? WHERE id = ?";
+
+        try {
+            Connection connection = conn.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setDouble(1, amount);
+            preparedStatement.setInt(2, bankAccountId);
+
+            return preparedStatement.executeUpdate() > 0;
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+            return false;
+        }
+    }
+
+    @Override
+    public boolean deductBalance(int bankAccountId, double amount) {
+        String query = "UPDATE bank_accounts SET balance = balance - ? WHERE id = ?";
+
+        try {
+            Connection connection = conn.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setDouble(1, amount);
+            preparedStatement.setInt(2, bankAccountId);
+
+            return preparedStatement.executeUpdate() > 0;
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+            return false;
+        }
+    }
+
     private BankAccount getBankAccount(PreparedStatement preparedStatement) {
         BankAccount bankAccount = null;
         try {
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 bankAccount = new BankAccount();
-                bankAccount.setId(resultSet.getLong("user_id"));
+                bankAccount.setId(resultSet.getInt("user_id"));
                 bankAccount.setAccountNumber(resultSet.getString("account_number"));
                 bankAccount.setBalance(resultSet.getFloat("account_balance"));
                 bankAccount.setUser(userDao.getUserById(resultSet.getInt("user_id")));
@@ -96,7 +130,7 @@ public class BankAccountDaoImpl implements IBankAccountDao {
                 List<Transaction> transactions = new ArrayList<>();
                 do {
                     Transaction transaction = new Transaction();
-                    transaction.setId(resultSet.getLong("transaction_id"));
+                    transaction.setId(resultSet.getInt("transaction_id"));
                     transaction.setTotal(resultSet.getDouble("transaction_total"));
                     transaction.setDate(resultSet.getDate("transaction_date"));
                     transaction.setTransactionType(new TransactionType(resultSet.getString("transaction_type")));
