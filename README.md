@@ -25,6 +25,10 @@ vWallet Beta es una simple aplicación escrita con Java e interfaz web usando JS
 - [jbcrypt-0.4.jar](src/main/webapp/WEB-INF/lib/jbcrypt-0.4.jar)
 - [mariadb-java-client-3.4.0.jar](src/main/webapp/WEB-INF/lib/mariadb-java-client-3.4.0.jar)
 
+## 🚀 Base de datos
+El script para crear la base de datos y generar datos de pruebas se encuentra en la carpeta sql del proyecto en el archivo
+que lleva por nombre [script.sql](sql/script.sql).
+
 ## 👨‍💻 Usuarios de prueba
 La aplicación tiene el usuario felipe@example.com como valor por defecto en el formulario de Login, solo basta presionar el botón de ingresar.
 La diferencia entre usuarios es más que nada el saldo y tipo de moneda usada.
