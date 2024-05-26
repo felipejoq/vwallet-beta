@@ -57,7 +57,7 @@
         <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-4">
             <div class="card h-100">
                 <div class="card-header text-center fw-bold fs-3">
-                    <div class="">VWallet Beta</div>
+                    <div class="">Resumen de cuenta</div>
                 </div>
                 <div class="card-body">
                     <div class="card-title">
