@@ -26,6 +26,10 @@ vWallet Beta es una simple aplicación escrita con Java e interfaz web usando JS
 - [mariadb-java-client-3.4.0.jar](src/main/webapp/WEB-INF/lib/mariadb-java-client-3.4.0.jar)
 
 ## 🚀 Base de datos
+Para ejecutar, es necesario modificar las variables de conexión a la DB en la Interfaz IConnectionEnvs ubicada en:
+
+- src/main/java/com/uncodigo/vwallet/models/database/IConnectionEnvs.java
+
 El script para crear la base de datos y generar datos de pruebas se encuentra en la carpeta sql del proyecto en el archivo
 que lleva por nombre [script.sql](sql/script.sql).
 
